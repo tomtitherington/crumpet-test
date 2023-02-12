@@ -1,6 +1,9 @@
+import 'package:crumpet_test/crumpet_base.dart';
+import 'package:crumpet_test/crumpet_client.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
+  //await CrumpetClient.initialize(apiKey: "apikeyhere");
   runApp(const MyApp());
 }
 
@@ -24,7 +27,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:
+          CrumpetBase(child: const MyHomePage(title: 'Flutter Demo Home Page')),
     );
   }
 }
@@ -51,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    CrumpetClient.instance.addEvent();
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
