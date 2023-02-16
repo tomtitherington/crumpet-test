@@ -1,0 +1,110 @@
+{
+    "components" : [
+        {
+            "component_id": 12433427,
+            "type": "full_page_card",
+            "trigger_event": "navigated_home",
+            "segment_id": 32,
+            "background_colour": null,
+            "background_image_url": "https://urltotheblobstorage",
+            "body": {
+                "element_type": "column",
+                "properties": {
+                    "margin_top": "{X}px",
+                    "margin_bottom": "{X}px",
+                    "margin_left": "{X}px",
+                    "margin_right": "{X}px",
+                    "padding_top": "{X}px",
+                    "padding_bottom": "{X}px",
+                    "padding_left": "{X}px",
+                    "padding_right": "{X}px",
+                    "main_axis_alignment": "start || center || end",
+                    "cross_axis_alignment": "start || center || end",
+                    "main_axis_size": "inf || {X}px",
+                    "spacing": "flex",
+                    "children": [
+                        {
+                            "element_type": "text",
+                            "properties": {
+                                "text": "Some sample text.",
+                                "font_size": "12",
+                                "font_color": "#123456",
+                                "flex": 1
+                            }
+                        },
+                        {
+                            "element_type": "image",
+                            "properties": {
+                                "url": "https://urltotheblobstorage",
+                                "flex": 2
+                            }
+                            
+                        },
+                        {
+                            "element_type": "button",
+                            "properties": {
+                                "color": "#123456",
+                                "text": "Submit",
+                                "action": "close || submit || next || deep_link || external_link",
+                                "event_name": "submit_pressed",
+                                "flex": 1,
+                                "stroke": "",
+                                "stroke_color": "#123456",
+                                "border_radius": 4
+                            }
+                        },
+                        {
+                            "element_type": "selection_group",
+                            "properties": {
+                                "allow_multi_selection": false,
+                                "event_name": "selection_confirmed",
+                                "selector_count": 2,
+                                "selectors": [
+                                    {
+                                        "text": "can put text or emoji here", 
+                                        "value": "value that is send in event properties"
+                                    },
+                                    {
+                                        "text": "can put text or emoji here",
+                                        "value": "value that is send in event properties"
+                                    }
+        
+                                ],
+                                "flex": 1
+                            }
+                            
+                        }, 
+                        {
+                            "element_type": "slider",
+                            "properties": {
+                                "event_name": "selection_confirmed",
+                                "min_value": 0,
+                                "max_value": 10,
+                                "increment": 1,
+                                "flex": 1
+                            }
+                        },
+                        {
+                            "element_type": "text_field",
+                            "properties": {
+                                "event_name": "feedback_response_event",
+                                "label_text": "Leave your thoughts here.",
+                                "font_color": "#123456",
+                                "font_size": 12,
+                                "background_color": "#123456",
+                                "border_radius": 0,
+                                "stroke": "",
+                                "stroke_color": "#123456",
+                                "flex": 1
+                            }
+                        }
+                    ]
+                }
+                
+            }
+
+            
+
+        }
+    ]
+}
