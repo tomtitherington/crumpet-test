@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
 
+//TODO do we store the template as a Map<String, dynamic> property or write the template to a file?
+
 class CrumpetClient {
   final _controller = StreamController<String>();
   Stream<String> get stream => _controller.stream;
