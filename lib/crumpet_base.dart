@@ -3,8 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:collection/collection.dart';
 
 import 'crumpet_client.dart';
+import 'models/crumpet_component.dart';
 
 class CrumpetBase extends StatefulWidget {
   final CrumpetClient client = CrumpetClient.instance;
@@ -16,22 +18,28 @@ class CrumpetBase extends StatefulWidget {
 }
 
 class _CrumpetBaseState extends State<CrumpetBase> {
-  bool shouldShow = false;
+  //bool shouldShow = false;
+	CrumpetComponent? componentToRender;
   late StreamSubscription _subscription;
 
   @override
   void initState() {
     _subscription = widget.client.stream.listen((event) {
-      setState(() {
-        shouldShow = true;
-      });
+      CrumpetComponent? component = widget.client.components.firstWhereOrNull(
+        (element) => element.triggerEvent == event,
+      );
+      if (component != null) {
+        setState(() {
+					componentToRender = component;
+        });
+      }
     });
     super.initState();
   }
 
-  void _shouldShow(BuildContext context) {
-    if (shouldShow) {
-      showDialog(
+  Future<void> _shouldShow(BuildContext context) async {
+    if (componentToRender != null) {
+      await showDialog(
         context: context,
         builder: (context) => Dialog(
           child: Center(
@@ -39,6 +47,7 @@ class _CrumpetBaseState extends State<CrumpetBase> {
           ),
         ),
       );
+			componentToRender = null;
     }
   }
 

@@ -61,7 +61,7 @@ class CrumpetColumnProperties implements CrumpetElementProperties {
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class CrumpetTextProperties implements CrumpetElementProperties {
-  final int text;
+  final String text;
   final int fontSize;
   final String fontColor;
   final int? flex;

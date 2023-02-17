@@ -61,7 +61,7 @@ const _$CrumpetSpacingEnumMap = {
 CrumpetTextProperties _$CrumpetTextPropertiesFromJson(
         Map<String, dynamic> json) =>
     CrumpetTextProperties(
-      text: json['text'] as int,
+      text: json['text'] as String,
       fontSize: json['font_size'] as int,
       fontColor: json['font_color'] as String,
       flex: json['flex'] as int?,

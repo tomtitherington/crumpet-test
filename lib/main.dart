@@ -3,7 +3,8 @@ import 'package:crumpet_test/crumpet_client.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  //await CrumpetClient.initialize(apiKey: "apikeyhere");
+  WidgetsFlutterBinding.ensureInitialized();
+  await CrumpetClient.initialize(apiKey: "apikeyhere");
   runApp(const MyApp());
 }
 
@@ -55,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
-    CrumpetClient.instance.addEvent();
+    CrumpetClient.instance.event(eventName: "navigated_home");
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
